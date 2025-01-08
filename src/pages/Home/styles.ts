@@ -1,5 +1,26 @@
 import styled from "styled-components";
 
+// Definindo o BaseInput
+const BaseInput = styled.input`
+  background: transparent;
+  height: 2.5rem;
+  border: 0;
+  border-bottom: 2px solid ${(props) => props.theme["gray-500"]};
+  font-weight: bold;
+  font-size: inherit;
+  padding: 0 0.5rem;
+  color: ${(props) => props.theme["gray-100"]};
+
+  &:focus {
+    box-shadow: none;
+    border-color: ${(props) => props.theme["green-500"]};
+  }
+
+  &::placeholder {
+    color: ${(props) => props.theme["gray-500"]};
+  }
+`;
+
 export const HomeContainer = styled.main`
   flex: 1;
   display: flex;
@@ -15,13 +36,9 @@ export const HomeContainer = styled.main`
   }
 `;
 
-
-
 export const MinutesAmountInput = styled(BaseInput)`
   width: 4rem;
 `;
-
-
 
 export const BaseCountdownButton = styled.button`
   width: 100%;
